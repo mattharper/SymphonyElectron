@@ -38,9 +38,9 @@
 									<key>GID</key>
 									<integer>80</integer>
 									<key>PATH</key>
-									<string>/Users/vishwas/Projects/symphony/SymphonyElectron/dist/mac/Mana.app</string>
+									<string>../../dist/mac/Mana.app</string>
 									<key>PATH_TYPE</key>
-									<integer>0</integer>
+									<integer>3</integer>
 									<key>PERMISSIONS</key>
 									<integer>493</integer>
 									<key>TYPE</key>
