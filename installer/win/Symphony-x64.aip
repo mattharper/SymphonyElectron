@@ -4,13 +4,12 @@
     <ROW Name="HiddenItems" Value="SccmComponent;ActSyncAppComponent;AppXAppDetailsComponent;AppXCapabilitiesComponent;AppXDependenciesComponent;AppXProductDetailsComponent;AppXVisualAssetsComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;FixupComponent"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
-    <ROW Property="AI_APP_ARGS" Value="/start-app=&quot;[#Symphony.pgx]&quot; --enable-media-stream"/>
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="AI_PRODUCTNAME_ARP" Value="[|ProductName]"/>
+    <ROW Property="AI_RUN_AS_ADMIN" Value="0"/>
     <ROW Property="AI_ThemeStyle" Value="default" MsiKey="AI_ThemeStyle"/>
     <ROW Property="AI_UNINSTALLER" Value="msiexec.exe"/>
     <ROW Property="ALLUSERS" Value="1" MultiBuildValue="DefaultBuild:2"/>
-    <ROW Property="ALWAYS_ON_TOP" Value="false" Type="4"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPHELPLINK" Value="http://www.symphony.com"/>
     <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
@@ -19,9 +18,7 @@
     <ROW Property="ARPSYSTEMCOMPONENT" Value="1"/>
     <ROW Property="ARPURLINFOABOUT" Value="http://www.symphony.com"/>
     <ROW Property="AUTO_LAUNCH_PATH" Value="[|]"/>
-    <ROW Property="AUTO_START" Value="true" Type="4"/>
     <ROW Property="AUTO_START_CB" Value="true" Type="4"/>
-    <ROW Property="BRING_TO_FRONT" Value="false" Type="4"/>
     <ROW Property="BannerBitmap" Value="banner" MultiBuildValue="DefaultBuild:Banner.jpg" Type="1" MsiKey="BannerBitmap"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="CUSTOM_TITLE_BAR" Value="true"/>
@@ -37,7 +34,6 @@
     <ROW Property="MEDIA_CB" Value="true" Type="4"/>
     <ROW Property="MIDI_SYSEX" Value="true"/>
     <ROW Property="MIDI_SYSEX_CB" Value="true"/>
-    <ROW Property="MINIMIZE_ON_CLOSE" Value="true" Type="4"/>
     <ROW Property="MINIMIZE_ON_CLOSE_CB" Value="true" Type="4"/>
     <ROW Property="Manufacturer" Value="Symphony"/>
     <ROW Property="NOTIFICATIONS" Value="true"/>
@@ -48,10 +44,9 @@
     <ROW Property="POINTER_LOCK_CB" Value="true"/>
     <ROW Property="ProductCode" Value="1033:{F17EDEB4-A15F-46B9-83E9-8652CBC886B2} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
-    <ROW Property="ProductName" Value="Symphony"/>
+    <ROW Property="ProductName" Value="Mana"/>
     <ROW Property="ProductVersion" Value="2.0.0" Type="32"/>
     <ROW Property="REBOOT" MultiBuildValue="DefaultBuild:ReallySuppress"/>
-    <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{36402281-8141-4797-8A90-07CFA75EFA55}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -69,7 +64,6 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
-    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
     <ROW Directory="ProgramMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~1|ProgramMenuFolder" IsPseudoRoot="1"/>
     <ROW Directory="Release_1_Dir" Directory_Parent="build_1_Dir" DefaultDir="Release"/>
     <ROW Directory="Release_2_Dir" Directory_Parent="build_2_Dir" DefaultDir="Release"/>
@@ -98,88 +92,87 @@
     <ROW Directory="spellchecker_Dir" Directory_Parent="nornagon_Dir" DefaultDir="SPELLC~1|spellchecker"/>
     <ROW Directory="src_1_Dir" Directory_Parent="spawnrx_Dir" DefaultDir="src"/>
     <ROW Directory="src_Dir" Directory_Parent="lib_Dir" DefaultDir="src"/>
+    <ROW Directory="swiftshader_Dir" Directory_Parent="APPDIR" DefaultDir="SWIFTS~1|swiftshader"/>
     <ROW Directory="vendor_Dir" Directory_Parent="spawnrx_Dir" DefaultDir="vendor"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="AI_CustomARPName" ComponentId="{2817ACD9-F494-4729-9830-111EF3311CFA}" Directory_="APPDIR" Attributes="4" KeyPath="DisplayName" Options="1"/>
     <ROW Component="AI_DisableModify" ComponentId="{DA4E8013-2F4B-493A-90A8-BD729DA7EE2C}" Directory_="APPDIR" Attributes="260" KeyPath="NoModify" Options="1"/>
-    <ROW Component="Jobber.exe" ComponentId="{AB38505C-2B94-49AA-BDD2-92CCC8F0DFCD}" Directory_="jobber_Dir" Attributes="0" KeyPath="Jobber.exe"/>
+    <ROW Component="Jobber.exe" ComponentId="{4B4ED9AA-E6FF-46F2-859E-BA66E353D540}" Directory_="jobber_Dir" Attributes="0" KeyPath="Jobber.exe"/>
+    <ROW Component="Mana.exe" ComponentId="{DAAD9A61-4CF7-4873-8E82-F9CA0CD351AE}" Directory_="APPDIR" Attributes="256" KeyPath="Mana.exe"/>
     <ROW Component="PodUrl" ComponentId="{EA80D82D-BC65-4075-A9A8-F53E2B2513CE}" Directory_="APPDIR" Attributes="260" KeyPath="PodUrl"/>
     <ROW Component="ProductInformation" ComponentId="{8B92B687-8AE0-4A5C-B6AB-5D1854009CEA}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
-    <ROW Component="ScreenSnippet.exe" ComponentId="{B92951AB-9E69-4970-A3B5-B4E5C32F3477}" Directory_="APPDIR" Attributes="0" KeyPath="ScreenSnippet.exe"/>
-    <ROW Component="ScreenSnippet.resources.dll" ComponentId="{B08D942C-2A3B-43A6-AF7A-1FCC71EFB7D5}" Directory_="jaJP_Dir" Attributes="0" KeyPath="ScreenSnippet.resources.dll"/>
-    <ROW Component="ScreenSnippet.resources.dll_1" ComponentId="{73A2FD51-947C-40DD-B574-762CDCAA50F2}" Directory_="enUS_Dir" Attributes="0" KeyPath="ScreenSnippet.resources.dll_1"/>
-    <ROW Component="ScreenSnippet.resources.dll_2" ComponentId="{D2E565B9-B7D4-4F5F-BA05-EB6D80651A5C}" Directory_="frFR_Dir" Attributes="0" KeyPath="ScreenSnippet.resources.dll_2"/>
+    <ROW Component="ScreenSnippet.exe" ComponentId="{1E2748DF-E421-47C6-83CE-502BDC4412FB}" Directory_="APPDIR" Attributes="0" KeyPath="ScreenSnippet.exe"/>
+    <ROW Component="ScreenSnippet.resources.dll" ComponentId="{99571145-3AD8-4932-80AA-2B498779A800}" Directory_="enUS_Dir" Attributes="0" KeyPath="ScreenSnippet.resources.dll"/>
+    <ROW Component="ScreenSnippet.resources.dll_1" ComponentId="{A48D7BF4-97B9-4E90-8962-FA12DFC2502D}" Directory_="frFR_Dir" Attributes="0" KeyPath="ScreenSnippet.resources.dll_1"/>
+    <ROW Component="ScreenSnippet.resources.dll_2" ComponentId="{77C83F12-5093-4CB5-9BD5-C0C47D13283C}" Directory_="jaJP_Dir" Attributes="0" KeyPath="ScreenSnippet.resources.dll_2"/>
     <ROW Component="Symphony" ComponentId="{A6B4BA2F-2403-4B8E-9303-BF8400A9B1C4}" Directory_="Symphony_Dir" Attributes="0"/>
-    <ROW Component="Symphony.config" ComponentId="{644A231D-2C96-4D3D-ADB0-7820DA373499}" Directory_="config_Dir" Attributes="0" KeyPath="Symphony.config_1" Type="0"/>
-    <ROW Component="Symphony.exe" ComponentId="{853053E4-D96C-42FE-9AF1-52FF1F449FFD}" Directory_="APPDIR" Attributes="256" KeyPath="Symphony.exe"/>
     <ROW Component="_" ComponentId="{D73FE3F2-2F6E-4911-85DA-0184A260329E}" Directory_="APPDIR" Attributes="260" KeyPath="_"/>
     <ROW Component="__1" ComponentId="{F70EA270-345A-4510-8428-0EF7B2EC44A3}" Directory_="APPDIR" Attributes="260" KeyPath="__1"/>
-    <ROW Component="am.pak" ComponentId="{76F935B8-6077-4C7A-AD1B-77E2DBA856CC}" Directory_="locales_Dir" Attributes="0" KeyPath="am.pak" Type="0"/>
-    <ROW Component="appupdate.yml" ComponentId="{F7586760-660A-4C38-8937-138DBEC18D34}" Directory_="resources_Dir" Attributes="0" KeyPath="app.asar" Type="0"/>
-    <ROW Component="blink_image_resources_200_percent.pak" ComponentId="{56AB17A5-B690-4CBE-A39D-512381AAAFE1}" Directory_="APPDIR" Attributes="0" KeyPath="LICENSES.chromium.html" Type="0"/>
-    <ROW Component="build.cmd" ComponentId="{2892AEA1-7773-46FE-8F4C-56E7EAC3BDC3}" Directory_="spawnrx_Dir" Attributes="0" KeyPath="build.cmd" Type="0"/>
-    <ROW Component="cld.node" ComponentId="{2598E57C-15B4-4B21-9DDA-EBD760F45C79}" Directory_="Release_Dir" Attributes="256" KeyPath="cld.node" Type="0"/>
-    <ROW Component="d3dcompiler_47.dll" ComponentId="{C7B87C02-3116-43A8-A70B-3592B70E6AC8}" Directory_="APPDIR" Attributes="256" KeyPath="d3dcompiler_47.dll"/>
-    <ROW Component="dictionary" ComponentId="{0337D363-6EC5-4283-98AC-0E2931979F53}" Directory_="library_Dir" Attributes="0" KeyPath="dictionary" Type="0"/>
-    <ROW Component="enAU.bdic" ComponentId="{13F10BB0-1A04-4A5E-8B6D-33CA73C97AEB}" Directory_="dictionaries_Dir" Attributes="0" KeyPath="enAU.bdic" Type="0"/>
-    <ROW Component="ffmpeg.dll" ComponentId="{A1C4A332-3490-44D8-A5C9-9523889B488B}" Directory_="APPDIR" Attributes="256" KeyPath="ffmpeg.dll"/>
-    <ROW Component="index.js" ComponentId="{741D86B3-7B85-4EE3-B47F-4680D5EBA3BF}" Directory_="lib_Dir" Attributes="0" KeyPath="index.js" Type="0"/>
-    <ROW Component="index.js_1" ComponentId="{E2560E07-B7EA-4186-94B6-0EAE52C043C0}" Directory_="src_Dir" Attributes="0" KeyPath="index.js_1" Type="0"/>
-    <ROW Component="index.ts" ComponentId="{19341989-DFA6-4A3D-BCA7-9D49243BFB69}" Directory_="src_1_Dir" Attributes="0" KeyPath="index.ts" Type="0"/>
-    <ROW Component="indexvalidatorx64.exe" ComponentId="{0266F3CF-5462-4381-9971-2353034D7E1D}" Directory_="library_Dir" Attributes="256" KeyPath="indexvalidatorx64.exe"/>
-    <ROW Component="keyboardlayoutmanager.node" ComponentId="{A5757182-A878-4BFC-A5FB-BD5CD57382F6}" Directory_="Release_2_Dir" Attributes="256" KeyPath="keyboardlayoutmanager.node" Type="0"/>
-    <ROW Component="libEGL.dll" ComponentId="{8EEC76AB-3601-4D11-B13E-32EC2A38C539}" Directory_="APPDIR" Attributes="256" KeyPath="libEGL.dll"/>
-    <ROW Component="libGLESv2.dll" ComponentId="{0E8B8B21-B4C0-45C9-95D3-637FD93A4EC0}" Directory_="APPDIR" Attributes="256" KeyPath="libGLESv2.dll"/>
-    <ROW Component="libsymphonysearchx64.dll" ComponentId="{A8C99D17-FA62-4996-8FAE-52D1DCF9BF26}" Directory_="library_Dir" Attributes="256" KeyPath="libsymphonysearchx64.dll"/>
-    <ROW Component="lz4winx64.exe" ComponentId="{8B78B313-EAE9-4533-AFEB-56F9E0CA73A1}" Directory_="library_Dir" Attributes="256" KeyPath="lz4winx64.exe"/>
-    <ROW Component="spellchecker.node" ComponentId="{C3444491-74ED-4F80-8F8A-76363B0DF5E5}" Directory_="Release_1_Dir" Attributes="256" KeyPath="spellchecker.node" Type="0"/>
-    <ROW Component="tarwin.exe" ComponentId="{4C98F3B1-1A73-4761-86C0-DE0FC18A8800}" Directory_="library_Dir" Attributes="0" KeyPath="tarwin.exe"/>
+    <ROW Component="am.pak" ComponentId="{5A9593FA-1479-44E9-A021-F4E663B801FC}" Directory_="locales_Dir" Attributes="0" KeyPath="am.pak" Type="0"/>
+    <ROW Component="app.asar" ComponentId="{82145D61-9D15-4C04-AB0C-94154DF2BE57}" Directory_="resources_Dir" Attributes="0" KeyPath="app.asar" Type="0"/>
+    <ROW Component="build.cmd" ComponentId="{5E09BAE1-1682-4582-B89C-6A1C4C475F62}" Directory_="spawnrx_Dir" Attributes="0" KeyPath="build.cmd" Type="0"/>
+    <ROW Component="chrome_200_percent.pak" ComponentId="{870774C2-CD1F-48E7-AF7A-E977D7C211F2}" Directory_="APPDIR" Attributes="0" KeyPath="chrome_200_percent.pak" Type="0"/>
+    <ROW Component="cld.node" ComponentId="{808EBA97-1FC2-4FA2-8167-D4E288243455}" Directory_="Release_Dir" Attributes="256" KeyPath="cld.node" Type="0"/>
+    <ROW Component="d3dcompiler_47.dll" ComponentId="{7CCF7443-1DFA-4797-A2D5-AB5DCA21E354}" Directory_="APPDIR" Attributes="256" KeyPath="d3dcompiler_47.dll"/>
+    <ROW Component="dictionary" ComponentId="{63B831AD-3496-4040-BD34-EE944C1DCA3A}" Directory_="library_Dir" Attributes="0" KeyPath="dictionary" Type="0"/>
+    <ROW Component="enAU.bdic" ComponentId="{7A79CCAC-A313-47BA-B18A-9C1FF905D5A2}" Directory_="dictionaries_Dir" Attributes="0" KeyPath="enAU.bdic" Type="0"/>
+    <ROW Component="ffmpeg.dll" ComponentId="{9F1E53D3-1E9A-4717-BE16-BE611E94B000}" Directory_="APPDIR" Attributes="256" KeyPath="ffmpeg.dll"/>
+    <ROW Component="index.js" ComponentId="{931971B7-47BF-4434-8DF6-2544B73E8371}" Directory_="lib_Dir" Attributes="0" KeyPath="index.js" Type="0"/>
+    <ROW Component="index.js_1" ComponentId="{F6049E27-820D-42D7-827E-90CB1E87A726}" Directory_="src_Dir" Attributes="0" KeyPath="index.js_1" Type="0"/>
+    <ROW Component="index.ts" ComponentId="{8ADDE1D9-2996-4AB3-BDD4-6F227E9FF22A}" Directory_="src_1_Dir" Attributes="0" KeyPath="index.ts" Type="0"/>
+    <ROW Component="keyboardlayoutmanager.node" ComponentId="{86689F4F-5B9E-4C7A-A872-9B30F45F499B}" Directory_="Release_2_Dir" Attributes="256" KeyPath="keyboardlayoutmanager.node" Type="0"/>
+    <ROW Component="libEGL.dll" ComponentId="{BDE292A5-0CEF-41D7-A85F-8DAE46C25A0C}" Directory_="APPDIR" Attributes="256" KeyPath="libEGL.dll"/>
+    <ROW Component="libEGL.dll_1" ComponentId="{371203F2-8169-4EBB-85D6-0C7EEF167001}" Directory_="swiftshader_Dir" Attributes="256" KeyPath="libEGL.dll_1"/>
+    <ROW Component="libGLESv2.dll" ComponentId="{23EAF301-3A7B-42E5-AD39-0360250EA98A}" Directory_="APPDIR" Attributes="256" KeyPath="libGLESv2.dll"/>
+    <ROW Component="libGLESv2.dll_1" ComponentId="{7D68C8FB-DCC5-47BD-AAD1-04DC132EF732}" Directory_="swiftshader_Dir" Attributes="256" KeyPath="libGLESv2.dll_1"/>
+    <ROW Component="spellchecker.node" ComponentId="{412E74B8-AAD4-4B63-84CF-0F9D15DBE35F}" Directory_="Release_1_Dir" Attributes="256" KeyPath="spellchecker.node" Type="0"/>
+    <ROW Component="titleBarStyles.css" ComponentId="{DD7D9A0C-AD47-483F-A178-F0A38AF2F7E3}" Directory_="config_Dir" Attributes="0" KeyPath="titleBarStyles.css" Type="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="D564007E3BBE4F85950A09B470A7CA65" Title="Visual C++ Redistributable for Visual Studio 2013 x86" Description="Visual C++ Redistributable for Visual Studio 2013 x86" Display="3" Level="1" Attributes="0"/>
-    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="AI_CustomARPName AI_DisableModify Jobber.exe PodUrl ProductInformation ScreenSnippet.exe ScreenSnippet.resources.dll ScreenSnippet.resources.dll_1 ScreenSnippet.resources.dll_2 Symphony Symphony.config Symphony.exe _ __1 am.pak appupdate.yml blink_image_resources_200_percent.pak build.cmd cld.node d3dcompiler_47.dll dictionary enAU.bdic ffmpeg.dll index.js index.js_1 index.ts indexvalidatorx64.exe keyboardlayoutmanager.node libEGL.dll libGLESv2.dll libsymphonysearchx64.dll lz4winx64.exe spellchecker.node tarwin.exe"/>
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="AI_CustomARPName AI_DisableModify Jobber.exe Mana.exe PodUrl ProductInformation ScreenSnippet.exe ScreenSnippet.resources.dll ScreenSnippet.resources.dll_1 ScreenSnippet.resources.dll_2 Symphony _ __1 am.pak app.asar build.cmd chrome_200_percent.pak cld.node d3dcompiler_47.dll dictionary enAU.bdic ffmpeg.dll index.js index.js_1 index.ts keyboardlayoutmanager.node libEGL.dll libEGL.dll_1 libGLESv2.dll libGLESv2.dll_1 spellchecker.node titleBarStyles.css"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
     <ROW File="CODE_OF_CONDUCT.md" Component_="build.cmd" FileName="CODE_O~1.MD|CODE_OF_CONDUCT.md" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\spawn-rx\CODE_OF_CONDUCT.md" SelfReg="false" NextFile="COPYING"/>
     <ROW File="COPYING" Component_="build.cmd" FileName="COPYING" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\spawn-rx\COPYING" SelfReg="false" NextFile="esdoc.json"/>
-    <ROW File="Jobber.exe" Component_="Jobber.exe" FileName="Jobber.exe" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\spawn-rx\vendor\jobber\Jobber.exe" SelfReg="false" NextFile="cld.node" DigSign="true"/>
-    <ROW File="LICENSE.electron.txt" Component_="blink_image_resources_200_percent.pak" FileName="LICENS~1.TXT|LICENSE.electron.txt" Attributes="0" SourcePath="..\..\dist\win-unpacked\LICENSE.electron.txt" SelfReg="false" NextFile="LICENSES.chromium.html"/>
-    <ROW File="LICENSES.chromium.html" Component_="blink_image_resources_200_percent.pak" FileName="LICENS~1.HTM|LICENSES.chromium.html" Attributes="0" SourcePath="..\..\dist\win-unpacked\LICENSES.chromium.html" SelfReg="false" NextFile="natives_blob.bin"/>
-    <ROW File="ScreenSnippet.exe" Component_="ScreenSnippet.exe" FileName="SCREEN~1.EXE|ScreenSnippet.exe" Attributes="0" SourcePath="..\..\node_modules\screen-snippet\bin\Release\ScreenSnippet.exe" SelfReg="false" NextFile="indexvalidatorx64.exe" DigSign="true"/>
-    <ROW File="ScreenSnippet.exe.config" Component_="blink_image_resources_200_percent.pak" FileName="SCREEN~1.CON|ScreenSnippet.exe.config" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\screen-snippet\bin\Release\ScreenSnippet.exe.config" SelfReg="false" NextFile="v8_context_snapshot.bin"/>
-    <ROW File="ScreenSnippet.resources.dll" Component_="ScreenSnippet.resources.dll" FileName="SCREEN~1.DLL|ScreenSnippet.resources.dll" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\screen-snippet\bin\Release\ja-JP\ScreenSnippet.resources.dll" SelfReg="false" NextFile="ScreenSnippet.resources.dll_1"/>
-    <ROW File="ScreenSnippet.resources.dll_1" Component_="ScreenSnippet.resources.dll_1" FileName="SCREEN~1.DLL|ScreenSnippet.resources.dll" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\screen-snippet\bin\Release\en-US\ScreenSnippet.resources.dll" SelfReg="false" NextFile="ScreenSnippet.exe.config"/>
-    <ROW File="ScreenSnippet.resources.dll_2" Component_="ScreenSnippet.resources.dll_2" FileName="SCREEN~1.DLL|ScreenSnippet.resources.dll" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\screen-snippet\bin\Release\fr-FR\ScreenSnippet.resources.dll" SelfReg="false" NextFile="titleBarStyles.css"/>
-    <ROW File="Symphony.config_1" Component_="Symphony.config" FileName="SYMPHO~1.CON|Symphony.config" Attributes="0" SourcePath="..\..\dist\win-unpacked\config\Symphony.config" SelfReg="false" NextFile="ScreenSnippet.exe"/>
-    <ROW File="Symphony.exe" Component_="Symphony.exe" FileName="Symphony.exe" Attributes="0" SourcePath="..\..\dist\win-unpacked\Symphony.exe" SelfReg="false" NextFile="am.pak" DigSign="true"/>
+    <ROW File="Jobber.exe" Component_="Jobber.exe" FileName="Jobber.exe" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\spawn-rx\vendor\jobber\Jobber.exe" SelfReg="false" NextFile="electron.asar" DigSign="true"/>
+    <ROW File="LICENSE.electron.txt" Component_="chrome_200_percent.pak" FileName="LICENS~1.TXT|LICENSE.electron.txt" Attributes="0" SourcePath="..\..\dist\win-unpacked\LICENSE.electron.txt" SelfReg="false" NextFile="LICENSES.chromium.html"/>
+    <ROW File="LICENSES.chromium.html" Component_="chrome_200_percent.pak" FileName="LICENS~1.HTM|LICENSES.chromium.html" Attributes="0" SourcePath="..\..\dist\win-unpacked\LICENSES.chromium.html" SelfReg="false" NextFile="Mana.exe"/>
+    <ROW File="Mana.exe" Component_="Mana.exe" FileName="Mana.exe" Attributes="0" SourcePath="..\..\dist\win-unpacked\Mana.exe" SelfReg="false" NextFile="natives_blob.bin" DigSign="true"/>
+    <ROW File="ScreenSnippet.exe" Component_="ScreenSnippet.exe" FileName="SCREEN~1.EXE|ScreenSnippet.exe" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\screen-snippet\bin\Release\ScreenSnippet.exe" SelfReg="false" NextFile="ScreenSnippet.exe.config" DigSign="true"/>
+    <ROW File="ScreenSnippet.exe.config" Component_="chrome_200_percent.pak" FileName="SCREEN~1.CON|ScreenSnippet.exe.config" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\screen-snippet\bin\Release\ScreenSnippet.exe.config" SelfReg="false"/>
+    <ROW File="ScreenSnippet.resources.dll" Component_="ScreenSnippet.resources.dll" FileName="SCREEN~1.DLL|ScreenSnippet.resources.dll" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\screen-snippet\bin\Release\en-US\ScreenSnippet.resources.dll" SelfReg="false" NextFile="ScreenSnippet.resources.dll_1"/>
+    <ROW File="ScreenSnippet.resources.dll_1" Component_="ScreenSnippet.resources.dll_1" FileName="SCREEN~1.DLL|ScreenSnippet.resources.dll" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\screen-snippet\bin\Release\fr-FR\ScreenSnippet.resources.dll" SelfReg="false" NextFile="ScreenSnippet.resources.dll_2"/>
+    <ROW File="ScreenSnippet.resources.dll_2" Component_="ScreenSnippet.resources.dll_2" FileName="SCREEN~1.DLL|ScreenSnippet.resources.dll" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\screen-snippet\bin\Release\ja-JP\ScreenSnippet.resources.dll" SelfReg="false" NextFile="build.cmd"/>
+    <ROW File="Symphony.config" Component_="titleBarStyles.css" FileName="SYMPHO~1.CON|Symphony.config" Attributes="0" SourcePath="..\..\dist\win-unpacked\config\Symphony.config" SelfReg="false" NextFile="ScreenSnippet.exe"/>
     <ROW File="am.pak" Component_="am.pak" FileName="am.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\am.pak" SelfReg="false" NextFile="ar.pak"/>
-    <ROW File="app.asar" Component_="appupdate.yml" FileName="APP~1.ASA|app.asar" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar" SelfReg="false" NextFile="electron.asar"/>
+    <ROW File="app.asar" Component_="app.asar" FileName="APP~1.ASA|app.asar" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar" SelfReg="false" NextFile="cld.node"/>
     <ROW File="ar.pak" Component_="am.pak" FileName="ar.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\ar.pak" SelfReg="false" NextFile="bg.pak"/>
     <ROW File="bg.pak" Component_="am.pak" FileName="bg.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\bg.pak" SelfReg="false" NextFile="bn.pak"/>
     <ROW File="bn.pak" Component_="am.pak" FileName="bn.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\bn.pak" SelfReg="false" NextFile="ca.pak"/>
     <ROW File="build.cmd" Component_="build.cmd" FileName="build.cmd" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\spawn-rx\build.cmd" SelfReg="false" NextFile="build.sh"/>
     <ROW File="build.sh" Component_="build.cmd" FileName="build.sh" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\spawn-rx\build.sh" SelfReg="false" NextFile="CODE_OF_CONDUCT.md"/>
     <ROW File="ca.pak" Component_="am.pak" FileName="ca.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\ca.pak" SelfReg="false" NextFile="cs.pak"/>
-    <ROW File="chrome_100_percent.pak" Component_="blink_image_resources_200_percent.pak" FileName="CHROME~1.PAK|chrome_100_percent.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\chrome_100_percent.pak" SelfReg="false" NextFile="chrome_200_percent.pak"/>
-    <ROW File="chrome_200_percent.pak" Component_="blink_image_resources_200_percent.pak" FileName="CHROME~2.PAK|chrome_200_percent.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\chrome_200_percent.pak" SelfReg="false" NextFile="resources.pak"/>
+    <ROW File="chrome_100_percent.pak" Component_="chrome_200_percent.pak" FileName="CHROME~2.PAK|chrome_100_percent.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\chrome_100_percent.pak" SelfReg="false" NextFile="Symphony.config"/>
+    <ROW File="chrome_200_percent.pak" Component_="chrome_200_percent.pak" FileName="CHROME~1.PAK|chrome_200_percent.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\chrome_200_percent.pak" SelfReg="false" NextFile="d3dcompiler_47.dll"/>
     <ROW File="cld.node" Component_="cld.node" FileName="CLD~1.NOD|cld.node" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\@nornagon\cld\build\Release\cld.node" SelfReg="false" NextFile="spellchecker.node"/>
     <ROW File="cs.pak" Component_="am.pak" FileName="cs.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\cs.pak" SelfReg="false" NextFile="da.pak"/>
     <ROW File="d3dcompiler_47.dll" Component_="d3dcompiler_47.dll" FileName="D3DCOM~1.DLL|d3dcompiler_47.dll" Attributes="0" SourcePath="..\..\dist\win-unpacked\d3dcompiler_47.dll" SelfReg="false" NextFile="ffmpeg.dll"/>
     <ROW File="da.pak" Component_="am.pak" FileName="da.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\da.pak" SelfReg="false" NextFile="de.pak"/>
     <ROW File="de.pak" Component_="am.pak" FileName="de.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\de.pak" SelfReg="false" NextFile="el.pak"/>
-    <ROW File="dictionary" Component_="dictionary" FileName="DICTIO~1|dictionary" Attributes="0" SourcePath="..\..\library\dictionary" SelfReg="false" NextFile="chrome_100_percent.pak"/>
+    <ROW File="dictionary" Component_="dictionary" FileName="DICTIO~1|dictionary" Attributes="0" SourcePath="..\..\dist\win-unpacked\library\dictionary" SelfReg="false" NextFile="indexvalidator.exec"/>
     <ROW File="el.pak" Component_="am.pak" FileName="el.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\el.pak" SelfReg="false" NextFile="enGB.pak"/>
-    <ROW File="electron.asar" Component_="appupdate.yml" FileName="ELECTR~1.ASA|electron.asar" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\electron.asar" SelfReg="false" NextFile="Symphony.config_1"/>
+    <ROW File="electron.asar" Component_="app.asar" FileName="ELECTR~1.ASA|electron.asar" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\electron.asar" SelfReg="false" NextFile="libEGL.dll_1"/>
     <ROW File="enAU.bdic" Component_="enAU.bdic" FileName="EN-AU~1.BDI|en-AU.bdic" Attributes="0" SourcePath="..\..\dist\win-unpacked\dictionaries\en-AU.bdic" SelfReg="false" NextFile="enCA.bdic"/>
     <ROW File="enCA.bdic" Component_="enAU.bdic" FileName="EN-CA~1.BDI|en-CA.bdic" Attributes="0" SourcePath="..\..\dist\win-unpacked\dictionaries\en-CA.bdic" SelfReg="false" NextFile="enGB.bdic"/>
     <ROW File="enGB.bdic" Component_="enAU.bdic" FileName="EN-GB~1.BDI|en-GB.bdic" Attributes="0" SourcePath="..\..\dist\win-unpacked\dictionaries\en-GB.bdic" SelfReg="false" NextFile="enUS.bdic"/>
     <ROW File="enGB.pak" Component_="am.pak" FileName="en-GB.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\en-GB.pak" SelfReg="false" NextFile="enUS.pak"/>
     <ROW File="enUS.bdic" Component_="enAU.bdic" FileName="EN-US~1.BDI|en-US.bdic" Attributes="0" SourcePath="..\..\dist\win-unpacked\dictionaries\en-US.bdic" SelfReg="false" NextFile="frFR.bdic"/>
-    <ROW File="enUS.pak" Component_="am.pak" FileName="en-US.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\en-US.pak" SelfReg="false" NextFile="es.pak"/>
-    <ROW File="es.pak" Component_="am.pak" FileName="es.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\es.pak" SelfReg="false" NextFile="es419.pak"/>
-    <ROW File="es419.pak" Component_="am.pak" FileName="es-419.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\es-419.pak" SelfReg="false" NextFile="et.pak"/>
+    <ROW File="enUS.pak" Component_="am.pak" FileName="en-US.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\en-US.pak" SelfReg="false" NextFile="es419.pak"/>
+    <ROW File="es.pak" Component_="am.pak" FileName="es.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\es.pak" SelfReg="false" NextFile="et.pak"/>
+    <ROW File="es419.pak" Component_="am.pak" FileName="es-419.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\es-419.pak" SelfReg="false" NextFile="es.pak"/>
     <ROW File="esdoc.json" Component_="build.cmd" FileName="ESDOC~1.JSO|esdoc.json" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\spawn-rx\esdoc.json" SelfReg="false" NextFile="index.js"/>
     <ROW File="et.pak" Component_="am.pak" FileName="et.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\et.pak" SelfReg="false" NextFile="fa.pak"/>
     <ROW File="fa.pak" Component_="am.pak" FileName="fa.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\fa.pak" SelfReg="false" NextFile="fi.pak"/>
@@ -187,66 +180,64 @@
     <ROW File="fi.pak" Component_="am.pak" FileName="fi.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\fi.pak" SelfReg="false" NextFile="fil.pak"/>
     <ROW File="fil.pak" Component_="am.pak" FileName="fil.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\fil.pak" SelfReg="false" NextFile="fr.pak"/>
     <ROW File="fr.pak" Component_="am.pak" FileName="fr.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\fr.pak" SelfReg="false" NextFile="gu.pak"/>
-    <ROW File="frFR.bdic" Component_="enAU.bdic" FileName="FR-FR~1.BDI|fr-FR.bdic" Attributes="0" SourcePath="..\..\dist\win-unpacked\dictionaries\fr-FR.bdic" SelfReg="false" NextFile="build.cmd"/>
+    <ROW File="frFR.bdic" Component_="enAU.bdic" FileName="FR-FR~1.BDI|fr-FR.bdic" Attributes="0" SourcePath="..\..\dist\win-unpacked\dictionaries\fr-FR.bdic" SelfReg="false" NextFile="dictionary"/>
     <ROW File="gu.pak" Component_="am.pak" FileName="gu.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\gu.pak" SelfReg="false" NextFile="he.pak"/>
     <ROW File="he.pak" Component_="am.pak" FileName="he.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\he.pak" SelfReg="false" NextFile="hi.pak"/>
     <ROW File="hi.pak" Component_="am.pak" FileName="hi.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\hi.pak" SelfReg="false" NextFile="hr.pak"/>
     <ROW File="hr.pak" Component_="am.pak" FileName="hr.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\hr.pak" SelfReg="false" NextFile="hu.pak"/>
     <ROW File="hu.pak" Component_="am.pak" FileName="hu.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\hu.pak" SelfReg="false" NextFile="id.pak"/>
-    <ROW File="icudtl.dat" Component_="blink_image_resources_200_percent.pak" FileName="icudtl.dat" Attributes="0" SourcePath="..\..\dist\win-unpacked\icudtl.dat" SelfReg="false" NextFile="libEGL.dll"/>
+    <ROW File="icudtl.dat" Component_="chrome_200_percent.pak" FileName="icudtl.dat" Attributes="0" SourcePath="..\..\dist\win-unpacked\icudtl.dat" SelfReg="false" NextFile="libEGL.dll"/>
     <ROW File="id.pak" Component_="am.pak" FileName="id.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\id.pak" SelfReg="false" NextFile="it.pak"/>
     <ROW File="index.js" Component_="index.js" FileName="index.js" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\spawn-rx\lib\index.js" SelfReg="false" NextFile="index.js_1"/>
-    <ROW File="index.js.map" Component_="index.js_1" FileName="INDEXJ~1.MAP|index.js.map" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\spawn-rx\lib\src\index.js.map" SelfReg="false" NextFile="package.json"/>
+    <ROW File="index.js.map" Component_="index.js_1" FileName="INDEXJ~1.MAP|index.js.map" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\spawn-rx\lib\src\index.js.map" SelfReg="false" NextFile="package.json_1"/>
     <ROW File="index.js_1" Component_="index.js_1" FileName="index.js" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\spawn-rx\lib\src\index.js" SelfReg="false" NextFile="index.js.map"/>
     <ROW File="index.ts" Component_="index.ts" FileName="index.ts" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\spawn-rx\src\index.ts" SelfReg="false" NextFile="tsconfig.json"/>
-    <ROW File="indexvalidatorx64.exe" Component_="indexvalidatorx64.exe" FileName="INDEXV~1.EXE|indexvalidator-x64.exe" Attributes="0" SourcePath="..\..\library\indexvalidator-x64.exe" SelfReg="false" NextFile="libsymphonysearchx64.dll" DigSign="true"/>
+    <ROW File="indexvalidator.exec" Component_="dictionary" FileName="INDEXV~1.EXE|indexvalidator.exec" Attributes="0" SourcePath="..\..\dist\win-unpacked\library\indexvalidator.exec" SelfReg="false" NextFile="libsymphonysearch.dylib"/>
     <ROW File="it.pak" Component_="am.pak" FileName="it.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\it.pak" SelfReg="false" NextFile="ja.pak"/>
     <ROW File="ja.pak" Component_="am.pak" FileName="ja.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\ja.pak" SelfReg="false" NextFile="kn.pak"/>
-    <ROW File="keyboardlayoutmanager.node" Component_="keyboardlayoutmanager.node" FileName="KEYBOA~1.NOD|keyboard-layout-manager.node" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\keyboard-layout\build\Release\keyboard-layout-manager.node" SelfReg="false" NextFile="dictionary"/>
+    <ROW File="keyboardlayoutmanager.node" Component_="keyboardlayoutmanager.node" FileName="KEYBOA~1.NOD|keyboard-layout-manager.node" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\keyboard-layout\build\Release\keyboard-layout-manager.node" SelfReg="false" NextFile="ScreenSnippet.resources.dll"/>
     <ROW File="kn.pak" Component_="am.pak" FileName="kn.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\kn.pak" SelfReg="false" NextFile="ko.pak"/>
     <ROW File="ko.pak" Component_="am.pak" FileName="ko.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\ko.pak" SelfReg="false" NextFile="lt.pak"/>
     <ROW File="libEGL.dll" Component_="libEGL.dll" FileName="libEGL.dll" Attributes="0" SourcePath="..\..\dist\win-unpacked\libEGL.dll" SelfReg="false" NextFile="libGLESv2.dll"/>
+    <ROW File="libEGL.dll_1" Component_="libEGL.dll_1" FileName="libEGL.dll" Attributes="0" SourcePath="..\..\dist\win-unpacked\swiftshader\libEGL.dll" SelfReg="false" NextFile="libGLESv2.dll_1"/>
     <ROW File="libGLESv2.dll" Component_="libGLESv2.dll" FileName="LIBGLE~1.DLL|libGLESv2.dll" Attributes="0" SourcePath="..\..\dist\win-unpacked\libGLESv2.dll" SelfReg="false" NextFile="LICENSE.electron.txt"/>
-    <ROW File="libsymphonysearchx64.dll" Component_="libsymphonysearchx64.dll" FileName="LIBSYM~1.DLL|libsymphonysearch-x64.dll" Attributes="0" SourcePath="..\..\library\libsymphonysearch-x64.dll" SelfReg="false" NextFile="lz4winx64.exe"/>
+    <ROW File="libGLESv2.dll_1" Component_="libGLESv2.dll_1" FileName="LIBGLE~1.DLL|libGLESv2.dll" Attributes="0" SourcePath="..\..\dist\win-unpacked\swiftshader\libGLESv2.dll" SelfReg="false" NextFile="chrome_100_percent.pak"/>
+    <ROW File="libsymphonysearch.dylib" Component_="dictionary" FileName="LIBSYM~1.DYL|libsymphonysearch.dylib" Attributes="0" SourcePath="..\..\dist\win-unpacked\library\libsymphonysearch.dylib" SelfReg="false" NextFile="lz4.exec"/>
     <ROW File="lt.pak" Component_="am.pak" FileName="lt.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\lt.pak" SelfReg="false" NextFile="lv.pak"/>
     <ROW File="lv.pak" Component_="am.pak" FileName="lv.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\lv.pak" SelfReg="false" NextFile="ml.pak"/>
-    <ROW File="lz4winx64.exe" Component_="lz4winx64.exe" FileName="LZ4-WI~1.EXE|lz4-win-x64.exe" Attributes="0" SourcePath="..\..\library\lz4-win-x64.exe" SelfReg="false" NextFile="tarwin.exe" DigSign="true"/>
+    <ROW File="lz4.exec" Component_="dictionary" FileName="LZ4~1.EXE|lz4.exec" Attributes="0" SourcePath="..\..\dist\win-unpacked\library\lz4.exec" SelfReg="false" NextFile="am.pak"/>
     <ROW File="ml.pak" Component_="am.pak" FileName="ml.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\ml.pak" SelfReg="false" NextFile="mr.pak"/>
     <ROW File="mr.pak" Component_="am.pak" FileName="mr.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\mr.pak" SelfReg="false" NextFile="ms.pak"/>
     <ROW File="ms.pak" Component_="am.pak" FileName="ms.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\ms.pak" SelfReg="false" NextFile="nb.pak"/>
-    <ROW File="natives_blob.bin" Component_="blink_image_resources_200_percent.pak" FileName="NATIVE~1.BIN|natives_blob.bin" Attributes="0" SourcePath="..\..\dist\win-unpacked\natives_blob.bin" SelfReg="false" NextFile="Symphony.exe"/>
+    <ROW File="natives_blob.bin" Component_="chrome_200_percent.pak" FileName="NATIVE~1.BIN|natives_blob.bin" Attributes="0" SourcePath="..\..\dist\win-unpacked\natives_blob.bin" SelfReg="false" NextFile="resources.pak"/>
     <ROW File="nb.pak" Component_="am.pak" FileName="nb.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\nb.pak" SelfReg="false" NextFile="nl.pak"/>
     <ROW File="nl.pak" Component_="am.pak" FileName="nl.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\nl.pak" SelfReg="false" NextFile="pl.pak"/>
-    <ROW File="package.json" Component_="build.cmd" FileName="PACKAG~1.JSO|package.json" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\spawn-rx\package.json" SelfReg="false" NextFile="index.ts"/>
+    <ROW File="package.json_1" Component_="build.cmd" FileName="PACKAG~1.JSO|package.json" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\spawn-rx\package.json" SelfReg="false" NextFile="index.ts"/>
     <ROW File="pl.pak" Component_="am.pak" FileName="pl.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\pl.pak" SelfReg="false" NextFile="ptBR.pak"/>
     <ROW File="ptBR.pak" Component_="am.pak" FileName="pt-BR.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\pt-BR.pak" SelfReg="false" NextFile="ptPT.pak"/>
     <ROW File="ptPT.pak" Component_="am.pak" FileName="pt-PT.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\pt-PT.pak" SelfReg="false" NextFile="ro.pak"/>
-    <ROW File="resources.pak" Component_="blink_image_resources_200_percent.pak" FileName="RESOUR~1.PAK|resources.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources.pak" SelfReg="false" NextFile="snapshot_blob.bin"/>
+    <ROW File="resources.pak" Component_="chrome_200_percent.pak" FileName="RESOUR~1.PAK|resources.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources.pak" SelfReg="false" NextFile="snapshot_blob.bin"/>
     <ROW File="ro.pak" Component_="am.pak" FileName="ro.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\ro.pak" SelfReg="false" NextFile="ru.pak"/>
     <ROW File="ru.pak" Component_="am.pak" FileName="ru.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\ru.pak" SelfReg="false" NextFile="sk.pak"/>
     <ROW File="sk.pak" Component_="am.pak" FileName="sk.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\sk.pak" SelfReg="false" NextFile="sl.pak"/>
     <ROW File="sl.pak" Component_="am.pak" FileName="sl.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\sl.pak" SelfReg="false" NextFile="sr.pak"/>
-    <ROW File="snapshot_blob.bin" Component_="blink_image_resources_200_percent.pak" FileName="SNAPSH~1.BIN|snapshot_blob.bin" Attributes="0" SourcePath="..\..\dist\win-unpacked\snapshot_blob.bin" SelfReg="false"/>
+    <ROW File="snapshot_blob.bin" Component_="chrome_200_percent.pak" FileName="SNAPSH~1.BIN|snapshot_blob.bin" Attributes="0" SourcePath="..\..\dist\win-unpacked\snapshot_blob.bin" SelfReg="false" NextFile="v8_context_snapshot.bin"/>
     <ROW File="spellchecker.node" Component_="spellchecker.node" FileName="SPELLC~1.NOD|spellchecker.node" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\@nornagon\spellchecker\build\Release\spellchecker.node" SelfReg="false" NextFile="keyboardlayoutmanager.node"/>
     <ROW File="sr.pak" Component_="am.pak" FileName="sr.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\sr.pak" SelfReg="false" NextFile="sv.pak"/>
     <ROW File="sv.pak" Component_="am.pak" FileName="sv.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\sv.pak" SelfReg="false" NextFile="sw.pak"/>
     <ROW File="sw.pak" Component_="am.pak" FileName="sw.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\sw.pak" SelfReg="false" NextFile="ta.pak"/>
     <ROW File="ta.pak" Component_="am.pak" FileName="ta.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\ta.pak" SelfReg="false" NextFile="te.pak"/>
-    <ROW File="tarwin.exe" Component_="tarwin.exe" FileName="tar-win.exe" Attributes="0" SourcePath="..\..\library\tar-win.exe" SelfReg="false" NextFile="ScreenSnippet.resources.dll" DigSign="true"/>
     <ROW File="te.pak" Component_="am.pak" FileName="te.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\te.pak" SelfReg="false" NextFile="th.pak"/>
     <ROW File="th.pak" Component_="am.pak" FileName="th.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\th.pak" SelfReg="false" NextFile="tr.pak"/>
-    <ROW File="titleBarStyles.css" Component_="Symphony.config" FileName="TITLEB~1.CSS|titleBarStyles.css" Attributes="0" SourcePath="..\..\dist\win-unpacked\config\titleBarStyles.css" SelfReg="false" NextFile="enAU.bdic"/>
+    <ROW File="titleBarStyles.css" Component_="titleBarStyles.css" FileName="TITLEB~1.CSS|titleBarStyles.css" Attributes="0" SourcePath="..\..\dist\win-unpacked\config\titleBarStyles.css" SelfReg="false" NextFile="enAU.bdic"/>
     <ROW File="tr.pak" Component_="am.pak" FileName="tr.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\tr.pak" SelfReg="false" NextFile="uk.pak"/>
     <ROW File="tsconfig.json" Component_="build.cmd" FileName="TSCONF~1.JSO|tsconfig.json" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\spawn-rx\tsconfig.json" SelfReg="false" NextFile="tslint.json"/>
     <ROW File="tslint.json" Component_="build.cmd" FileName="TSLINT~1.JSO|tslint.json" Attributes="0" SourcePath="..\..\dist\win-unpacked\resources\app.asar.unpacked\node_modules\spawn-rx\tslint.json" SelfReg="false" NextFile="Jobber.exe"/>
     <ROW File="uk.pak" Component_="am.pak" FileName="uk.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\uk.pak" SelfReg="false" NextFile="vi.pak"/>
-    <ROW File="v8_context_snapshot.bin" Component_="blink_image_resources_200_percent.pak" FileName="V8_CON~1.BIN|v8_context_snapshot.bin" Attributes="0" SourcePath="..\..\dist\win-unpacked\v8_context_snapshot.bin" SelfReg="false" NextFile="ScreenSnippet.resources.dll_2"/>
+    <ROW File="v8_context_snapshot.bin" Component_="chrome_200_percent.pak" FileName="V8_CON~1.BIN|v8_context_snapshot.bin" Attributes="0" SourcePath="..\..\dist\win-unpacked\v8_context_snapshot.bin" SelfReg="false" NextFile="titleBarStyles.css"/>
     <ROW File="vi.pak" Component_="am.pak" FileName="vi.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\vi.pak" SelfReg="false" NextFile="zhCN.pak"/>
     <ROW File="zhCN.pak" Component_="am.pak" FileName="zh-CN.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\zh-CN.pak" SelfReg="false" NextFile="zhTW.pak"/>
     <ROW File="zhTW.pak" Component_="am.pak" FileName="zh-TW.pak" Attributes="0" SourcePath="..\..\dist\win-unpacked\locales\zh-TW.pak" SelfReg="false" NextFile="app.asar"/>
-  </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.AiPersistentDataComponent">
-    <ROW PersistentRow="Symphony.config_1" Type="0" Condition="REINSTALL"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
     <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="1" Languages="en" InstallationType="4" UseLargeSchema="true" MsiPackageType="x64"/>
@@ -271,23 +262,10 @@
     <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
     <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
   </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
-    <ROW Action="AI_AiBackupImmediate" Description="Preparing backup operation" DescriptionLocId="ActionText.Description.AI_AiBackupImmediate" Template="Path: [1]" TemplateLocId="ActionText.Template.AI_AiBackupImmediate"/>
-    <ROW Action="AI_AiBackupRollback" Description="Rollback backup" DescriptionLocId="ActionText.Description.AI_AiBackupRollback" Template="Path: [1]" TemplateLocId="ActionText.Template.AI_AiBackupRollback"/>
-    <ROW Action="AI_AiRestoreDeferred" Description="Executing restore operation" DescriptionLocId="ActionText.Description.AI_AiRestoreDeferred" Template="Path: [1]" TemplateLocId="ActionText.Template.AI_AiRestoreDeferred"/>
-    <ROW Action="AI_AiRestoreDeferredImpersonate" Description="Executing restore operation" DescriptionLocId="ActionText.Description.AI_AiRestoreDeferred" Template="Path: [1]" TemplateLocId="ActionText.Template.AI_AiRestoreDeferred"/>
-    <ROW Action="AI_AiRestoreRollback" Description="Rollback restore" DescriptionLocId="ActionText.Description.AI_AiRestoreRollback" Template="Path: [1]" TemplateLocId="ActionText.Template.AI_AiRestoreRollback"/>
-    <ROW Action="AI_TxtUpdaterCommit" Description="Commit text file changes. " DescriptionLocId="ActionText.Description.AI_TxtUpdaterCommit" Template="Commit text file changes." TemplateLocId="ActionText.Template.AI_TxtUpdaterCommit"/>
-    <ROW Action="AI_TxtUpdaterConfig" Description="Executing text file updates" DescriptionLocId="ActionText.Description.AI_TxtUpdaterConfig" Template="Updating text file: &quot;[1]&quot;" TemplateLocId="ActionText.Template.AI_TxtUpdaterConfig"/>
-    <ROW Action="AI_TxtUpdaterInstall" Description="Generating actions to configure text files updates" DescriptionLocId="ActionText.Description.AI_TxtUpdaterInstall"/>
-    <ROW Action="AI_TxtUpdaterRollback" Description="Rolling back text file changes. " DescriptionLocId="ActionText.Description.AI_TxtUpdaterRollback" Template="Rolling back text file changes." TemplateLocId="ActionText.Template.AI_TxtUpdaterRollback"/>
-  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
     <ROW Name="Banner.jpg" SourcePath="Assets\Banner.jpg"/>
     <ROW Name="PowerShellScriptLauncher.dll" SourcePath="&lt;AI_CUSTACTS&gt;PowerShellScriptLauncher.dll"/>
-    <ROW Name="ResourceCleaner.dll" SourcePath="&lt;AI_CUSTACTS&gt;ResourceCleaner.dll"/>
     <ROW Name="Tabloid.jpg" SourcePath="Assets\Tabloid.jpg"/>
-    <ROW Name="TxtUpdater.dll" SourcePath="&lt;AI_CUSTACTS&gt;TxtUpdater.dll"/>
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCheckBoxComponent">
@@ -587,8 +565,6 @@
     <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EnableRollback" Argument="False" Condition="OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="600" MsiKey="VerifyRepairDlg#Repair#EnableRollback#False#OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;"/>
     <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="Reinstall" Argument="All" Condition="OutOfDiskSpace &lt;&gt; 1" Ordering="200" MsiKey="VerifyRepairDlg#Repair#Reinstall#All#OutOfDiskSpace &lt;&gt; 1"/>
     <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="ReinstallMode" Argument="ecmus" Condition="OutOfDiskSpace &lt;&gt; 1" Ordering="100" MsiKey="VerifyRepairDlg#Repair#ReinstallMode#ecmus#OutOfDiskSpace &lt;&gt; 1"/>
-    <ROW Dialog_="FatalError" Control_="Finish" Event="DoAction" Argument="AI_AiBackupCleanup" Condition="1" Ordering="102"/>
-    <ROW Dialog_="UserExit" Control_="Finish" Event="DoAction" Argument="AI_AiBackupCleanup" Condition="1" Ordering="101"/>
     <ROW Dialog_="InstallationDlg" Control_="SsoCheckbox" Event="[POD_URL]" Argument="[POD_URL]/login/sso/initsso" Condition="AI_INSTALL AND ( SSO_CHECKBOX )" Ordering="0"/>
     <ROW Dialog_="InstallationDlg" Control_="SsoCheckbox" Event="DoAction" Argument="SsoCheckbox" Condition="AI_INSTALL AND ( NOT SSO_CHECKBOX )" Ordering="1"/>
     <ROW Dialog_="InstallationDlg" Control_="SsoCheckbox" Event="[AiRefreshDlg]" Argument="1" Condition="AI_INSTALL AND ( NOT SSO_CHECKBOX )" Ordering="2"/>
@@ -598,12 +574,6 @@
     <ROW Directory_="Symphony_Dir" Component_="Symphony" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
-    <ROW Action="AI_AiBackupCleanup" Type="1" Source="ResourceCleaner.dll" Target="OnAiBackupCleanup" WithoutSeq="true"/>
-    <ROW Action="AI_AiBackupImmediate" Type="1" Source="ResourceCleaner.dll" Target="OnAiBackupImmediate"/>
-    <ROW Action="AI_AiBackupRollback" Type="11521" Source="ResourceCleaner.dll" Target="OnAiBackupRollback"/>
-    <ROW Action="AI_AiRestoreDeferred" Type="11265" Source="ResourceCleaner.dll" Target="OnAiRestoreDeferred"/>
-    <ROW Action="AI_AiRestoreDeferredImpersonate" Type="9217" Source="ResourceCleaner.dll" Target="OnAiRestoreDeferredImpersonate"/>
-    <ROW Action="AI_AiRestoreRollback" Type="11521" Source="ResourceCleaner.dll" Target="OnAiRestoreRollback" WithoutSeq="true"/>
     <ROW Action="AI_AuthorSinglePackage" Type="1" Source="aicustact.dll" Target="AI_AuthorSinglePackage" WithoutSeq="true"/>
     <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="Symphony.exe"/>
     <ROW Action="AI_DATA_SETTER_1" Type="51" Source="CustomActionData" Target="AEkAcwA2ADQAQgBpAHQAAgABAFAAYQByAGEAbQBzAAIAAQBTAGMAcgBpAHAAdAACACMAIABCAGwAbwBjAGsAIABmAG8AcgAgAGQAZQBjAGwAYQByAGkAbgBnACAAdABoAGUAIABzAGMAcgBpAHAAdAAgAHAAYQByAGEAbQBlAHQAZQByAHMALgANAAoAUABhAHIAYQBtACgAKQANAAoADQAKACMAIABZAG8AdQByACAAYwBvAGQAZQAgAGcAbwBlAHMAIABoAGUAcgBlAC4ADQAKAFIAZQBtAG8AdgBlAC0ASQB0AGUAbQBQAHIAbwBwAGUAcgB0AHkAIAAtAFAAYQB0AGgAIAAiAEgASwBDAFUAOgBTAG8AZgB0AHcAYQByAGUAXABNAGkAYwByAG8AcwBvAGYAdABcAFcAaQBuAGQAbwB3AHMAXABDAHUAcgByAGUAbgB0AFYAZQByAHMAaQBvAG4AXABSAHUAbgAiACAALQBOAGEAbQBlACAAIgBTAHkAbQBwAGgAbwBuAHkAIgAgAC0ARQByAHIAbwByAEEAYwB0AGkAbwBuACAAUwBpAGwAZQBuAHQAbAB5AEMAbwBuAHQAaQBuAHUAZQANAAoAUgBlAG0AbwB2AGUALQBJAHQAZQBtACAAIgBIAEsAQwBVADoAUwBvAGYAdAB3AGEAcgBlAFwAQwBsAGEAcwBzAGUAcwBcAHMAeQBtAHAAaABvAG4AeQAiACAALQBSAGUAYwB1AHIAcwBlACAALQBFAHIAcgBvAHIAQQBjAHQAaQBvAG4AIABTAGkAbABlAG4AdABsAHkAQwBvAG4AdABpAG4AdQBlAA0ACgANAAoAUgBlAG0AbwB2AGUALQBJAHQAZQBtACAAIgBIAEsATABNADoAUwBPAEYAVABXAEEAUgBFAFwAQwBsAGEAcwBzAGUAcwBcAHMAeQBtAHAAaABvAG4AeQAiACAALQBSAGUAYwB1AHIAcwBlACAALQBFAHIAcgBvAHIAQQBjAHQAaQBvAG4AIABTAGkAbABlAG4AdABsAHkAQwBvAG4AdABpAG4AdQBlAA0ACgANAAoATgBlAHcALQBQAFMARAByAGkAdgBlACAALQBOAGEAbQBlACAASABLAEMAUgAgAC0AUABTAFAAcgBvAHYAaQBkAGUAcgAgAFIAZQBnAGkAcwB0AHIAeQAgAC0AUgBvAG8AdAAgAEgASwBFAFkAXwBDAEwAQQBTAFMARQBTAF8AUgBPAE8AVAAgAC0ARQByAHIAbwByAEEAYwB0AGkAbwBuACAAUwBpAGwAZQBuAHQAbAB5AEMAbwBuAHQAaQBuAHUAZQANAAoAUgBlAG0AbwB2AGUALQBpAHQAZQBtACAAIgBIAEsAQwBSADoAXABzAHkAbQBwAGgAbwBuAHkAIgAgAC0AUgBlAGMAdQByAHMAZQAgAC0ARQByAHIAbwByAEEAYwB0AGkAbwBuACAAUwBpAGwAZQBuAHQAbAB5AEMAbwBuAHQAaQBuAHUAZQANAAoADQAKAE4AZQB3AC0AUABTAEQAcgBpAHYAZQAgAC0ATgBhAG0AZQAgAEgASwBVACAALQBQAFMAUAByAG8AdgBpAGQAZQByACAAUgBlAGcAaQBzAHQAcgB5ACAALQBSAG8AbwB0ACAASABLAEUAWQBfAFUAUwBFAFIAUwAgAC0ARQByAHIAbwByAEEAYwB0AGkAbwBuACAAUwBpAGwAZQBuAHQAbAB5AEMAbwBuAHQAaQBuAHUAZQANAAoAUgBlAG0AbwB2AGUALQBJAHQAZQBtAFAAcgBvAHAAZQByAHQAeQAgAC0AUABhAHQAaAAgACIASABLAFUAOgAuAEQARQBGAEEAVQBMAFQAXABTAG8AZgB0AHcAYQByAGUAXABNAGkAYwByAG8AcwBvAGYAdABcAFcAaQBuAGQAbwB3AHMAXABDAHUAcgByAGUAbgB0AFYAZQByAHMAaQBvAG4AXABSAHUAbgAiACAALQBOAGEAbQBlACAAIgBTAHkAbQBwAGgAbwBuAHkAIgAgAC0ARQByAHIAbwByAEEAYwB0AGkAbwBuACAAUwBpAGwAZQBuAHQAbAB5AEMAbwBuAHQAaQBuAHUAZQ=="/>
@@ -613,16 +583,12 @@
     <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
     <ROW Action="AI_GetArpIconPath" Type="1" Source="aicustact.dll" Target="GetArpIconPath"/>
     <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
-    <ROW Action="AI_LaunchApp" Type="1" Source="aicustact.dll" Target="[#Symphony.exe]"/>
+    <ROW Action="AI_LaunchApp" Type="1" Source="aicustact.dll" Target="[#Mana.exe]"/>
     <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
     <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
     <ROW Action="AI_SETMIXINSTLOCATION" Type="1" Source="aicustact.dll" Target="MixedAllUsersInstallLocation"/>
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
-    <ROW Action="AI_TxtUpdaterCommit" Type="11777" Source="TxtUpdater.dll" Target="OnTxtUpdaterCommit" WithoutSeq="true"/>
-    <ROW Action="AI_TxtUpdaterConfig" Type="11265" Source="TxtUpdater.dll" Target="OnTxtUpdaterConfig" WithoutSeq="true"/>
-    <ROW Action="AI_TxtUpdaterInstall" Type="1" Source="TxtUpdater.dll" Target="OnTxtUpdaterInstall"/>
-    <ROW Action="AI_TxtUpdaterRollback" Type="11521" Source="TxtUpdater.dll" Target="OnTxtUpdaterRollback" WithoutSeq="true"/>
     <ROW Action="KillParagon" Type="65" Source="aicustact.dll" Target="StopProcess" Options="1" AdditionalSeq="AI_DATA_SETTER_2"/>
     <ROW Action="KillRenderer" Type="65" Source="aicustact.dll" Target="StopProcess" Options="1" AdditionalSeq="AI_DATA_SETTER"/>
     <ROW Action="PodUrlValidation" Type="101" Target="Script Text" TargetUnformatted="var prefix1 = &quot;https://&quot;;&#13;&#10;var prefix2 = &quot;http://&quot;;&#13;&#10;&#13;&#10;Session.Property(&quot;POD_URL&quot;) = Session.Property(&quot;POD_URL&quot;).replace(/^\s\s*/, &apos;&apos;).replace(/\s\s*$/, &apos;&apos;);&#13;&#10;&#13;&#10;if (!Session.Property(&quot;POD_URL&quot;) || Session.Property(&quot;POD_URL&quot;) === &quot;&quot; || Session.Property(&quot;POD_URL&quot;) === &quot;https://[POD].symphony.com&quot;) {&#13;&#10;&#9;Session.Property(&quot;INVALID_POD_URL&quot;) = &quot;invalid&quot;;&#13;&#10;} else if (Session.Property(&quot;POD_URL&quot;).substr(0, prefix1.length) !== prefix1 &amp;&amp; Session.Property(&quot;POD_URL&quot;).substr(0, prefix2.length) !== prefix2) {&#13;&#10;&#9;Session.Property(&quot;POD_URL&quot;) = prefix1 + Session.Property(&quot;POD_URL&quot;);&#13;&#10;}&#13;&#10;&#13;&#10;var podUrlRE = /^(https:\/\/)(www.)?[a-zA-Z0-9]+([\-\.]{1}[a-zA-Z0-9]+)*\.[a-zA-Z]{2,}(:[0-9]{1,5})?(\/[a-zA-Z0-9-_.+!*&apos;(),;/?:@=&amp;$]*)?$/;&#13;&#10;var podUrlTest = podUrlRE.test(Session.Property(&quot;POD_URL&quot;));&#13;&#10;if (!podUrlTest) {&#13;&#10;&#9;Session.Property(&quot;INVALID_POD_URL&quot;) = &quot;invalid&quot;;&#13;&#10;} else {&#13;&#10;&#9;Session.Property(&quot;INVALID_POD_URL&quot;) = &quot;valid&quot;;&#13;&#10;}&#13;&#10;&#13;&#10;var autoLaunchPath = Session.Property(&quot;AUTO_LAUNCH_PATH&quot;);&#13;&#10;if (autoLaunchPath) {&#13;&#10;&#9;Session.Property(&quot;AUTO_LAUNCH_PATH&quot;) = autoLaunchPath.replace(/\\/g, &quot;/&quot;);&#13;&#10;}&#13;&#10;&#13;&#10;Session.Property(&quot;ALWAYS_ON_TOP&quot;) = &quot;false&quot;;            &#13;&#10;Session.Property(&quot;AUTO_START&quot;) = &quot;false&quot;;&#13;&#10;Session.Property(&quot;MINIMIZE_ON_CLOSE&quot;) = &quot;false&quot;;&#13;&#10;Session.Property(&quot;BRING_TO_FRONT&quot;) = &quot;false&quot;;&#13;&#10;Session.Property(&quot;CUSTOM_TITLE_BAR&quot;) = &quot;false&quot;;&#13;&#10;Session.Property(&quot;DEV_TOOLS_ENABLED&quot;) = &quot;false&quot;;&#13;&#10;&#13;&#10;Session.Property(&quot;MEDIA&quot;) = &quot;false&quot;;&#13;&#10;Session.Property(&quot;LOCATION&quot;) = &quot;false&quot;;&#13;&#10;Session.Property(&quot;NOTIFICATIONS&quot;) = &quot;false&quot;;&#13;&#10;Session.Property(&quot;MIDI_SYSEX&quot;) = &quot;false&quot;;&#13;&#10;Session.Property(&quot;POINTER_LOCK&quot;) = &quot;false&quot;;&#13;&#10;Session.Property(&quot;FULL_SCREEN&quot;) = &quot;false&quot;;&#13;&#10;Session.Property(&quot;OPEN_EXTERNAL&quot;) = &quot;false&quot;;&#13;&#10;&#13;&#10;if (Session.Property(&quot;ALWAYS_ON_TOP_CB&quot;) &amp;&amp; Session.Property(&quot;ALWAYS_ON_TOP_CB&quot;) === &quot;true&quot;)&#13;&#10;{&#13;&#10;    Session.Property(&quot;ALWAYS_ON_TOP&quot;) = &quot;true&quot;;&#13;&#10;}&#13;&#10;&#13;&#10;if (Session.Property(&quot;MINIMIZE_ON_CLOSE_CB&quot;) &amp;&amp; Session.Property(&quot;MINIMIZE_ON_CLOSE_CB&quot;) === &quot;true&quot;)&#13;&#10;{&#13;&#10;    Session.Property(&quot;MINIMIZE_ON_CLOSE&quot;) = &quot;true&quot;;&#13;&#10;}&#13;&#10;&#13;&#10;if (Session.Property(&quot;AUTO_START_CB&quot;) &amp;&amp; Session.Property(&quot;AUTO_START_CB&quot;) === &quot;true&quot;)&#13;&#10;{&#13;&#10;    Session.Property(&quot;AUTO_START&quot;) = &quot;true&quot;;&#13;&#10;}&#13;&#10;&#13;&#10;if (Session.Property(&quot;BRING_TO_FRONT_CB&quot;) &amp;&amp; Session.Property(&quot;BRING_TO_FRONT_CB&quot;) === &quot;true&quot;)&#13;&#10;{&#13;&#10;    Session.Property(&quot;BRING_TO_FRONT&quot;) = &quot;true&quot;;&#13;&#10;}&#13;&#10;&#13;&#10;if (Session.Property(&quot;CUSTOM_TITLE_BAR_CB&quot;) &amp;&amp; Session.Property(&quot;CUSTOM_TITLE_BAR_CB&quot;) === &quot;true&quot;)&#13;&#10;{&#13;&#10;    Session.Property(&quot;CUSTOM_TITLE_BAR&quot;) = &quot;true&quot;;&#13;&#10;}&#13;&#10;&#13;&#10;if (Session.Property(&quot;DEV_TOOLS_CB&quot;) &amp;&amp; Session.Property(&quot;DEV_TOOLS_CB&quot;) === &quot;true&quot;)&#13;&#10;{&#13;&#10;    Session.Property(&quot;DEV_TOOLS_ENABLED&quot;) = &quot;true&quot;;&#13;&#10;}&#13;&#10;&#13;&#10;if (Session.Property(&quot;MEDIA_CB&quot;) &amp;&amp; Session.Property(&quot;MEDIA_CB&quot;) === &quot;true&quot;)&#13;&#10;{&#13;&#10;    Session.Property(&quot;MEDIA&quot;) = &quot;true&quot;;&#13;&#10;}&#13;&#10;&#13;&#10;if (Session.Property(&quot;LOCATION_CB&quot;) &amp;&amp; Session.Property(&quot;LOCATION_CB&quot;) === &quot;true&quot;)&#13;&#10;{&#13;&#10;    Session.Property(&quot;LOCATION&quot;) = &quot;true&quot;;    &#13;&#10;}&#13;&#10;&#13;&#10;if (Session.Property(&quot;NOTIFICATIONS_CB&quot;) &amp;&amp; Session.Property(&quot;NOTIFICATIONS_CB&quot;) === &quot;true&quot;)&#13;&#10;{&#13;&#10;    Session.Property(&quot;NOTIFICATIONS&quot;) = &quot;true&quot;;&#13;&#10;}&#13;&#10;&#13;&#10;if (Session.Property(&quot;MIDI_SYSEX_CB&quot;) &amp;&amp; Session.Property(&quot;MIDI_SYSEX_CB&quot;) === &quot;true&quot;)&#13;&#10;{&#13;&#10;    Session.Property(&quot;MIDI_SYSEX&quot;) = &quot;true&quot;;&#13;&#10;}&#13;&#10;&#13;&#10;if (Session.Property(&quot;POINTER_LOCK_CB&quot;) &amp;&amp; Session.Property(&quot;POINTER_LOCK_CB&quot;) === &quot;true&quot;)&#13;&#10;{&#13;&#10;    Session.Property(&quot;POINTER_LOCK&quot;) = &quot;true&quot;;&#13;&#10;}&#13;&#10;&#13;&#10;if (Session.Property(&quot;FULL_SCREEN_CB&quot;) &amp;&amp; Session.Property(&quot;FULL_SCREEN_CB&quot;) === &quot;true&quot;)&#13;&#10;{&#13;&#10;    Session.Property(&quot;FULL_SCREEN&quot;) = &quot;true&quot;;&#13;&#10;}&#13;&#10;&#13;&#10;if (Session.Property(&quot;OPEN_EXTERNAL_CB&quot;) &amp;&amp; Session.Property(&quot;OPEN_EXTERNAL_CB&quot;) === &quot;true&quot;)&#13;&#10;{&#13;&#10;    Session.Property(&quot;OPEN_EXTERNAL&quot;) = &quot;true&quot;;&#13;&#10;}&#13;&#10;" WithoutSeq="true"/>
@@ -644,21 +610,16 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
-    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1502"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
     <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
     <ROW Action="AI_ResolveKnownFolders" Sequence="55"/>
-    <ROW Action="AI_GetArpIconPath" Sequence="1402"/>
+    <ROW Action="AI_GetArpIconPath" Sequence="1401"/>
     <ROW Action="KillParagon" Sequence="54"/>
-    <ROW Action="AI_DATA_SETTER_2" Sequence="52"/>
+    <ROW Action="AI_DATA_SETTER_2" Sequence="53"/>
     <ROW Action="KillRenderer" Sequence="57"/>
     <ROW Action="AI_DATA_SETTER" Sequence="56"/>
     <ROW Action="AI_SETMIXINSTLOCATION" Sequence="749"/>
-    <ROW Action="AI_AiBackupImmediate" Sequence="1401"/>
-    <ROW Action="AI_AiBackupRollback" Sequence="1501"/>
-    <ROW Action="AI_AiRestoreDeferred" Sequence="6598"/>
-    <ROW Action="AI_TxtUpdaterInstall" Sequence="5101"/>
     <ROW Action="AI_EnableDebugLog" Sequence="51"/>
-    <ROW Action="AI_AiRestoreDeferredImpersonate" Sequence="6599"/>
     <ROW Action="PowerShellScriptInline" Condition="( Installed AND ( REMOVE = &quot;ALL&quot; OR AI_INSTALL_MODE = &quot;Remove&quot; ) ) AND ( (VersionNT &gt; 501) OR (VersionNT = 501 AND ServicePackLevel &gt;= 2) )" Sequence="6402"/>
     <ROW Action="AI_DATA_SETTER_1" Condition="( Installed AND ( REMOVE = &quot;ALL&quot; OR AI_INSTALL_MODE = &quot;Remove&quot; ) ) AND ( (VersionNT &gt; 501) OR (VersionNT = 501 AND ServicePackLevel &gt;= 2) )" Sequence="6401"/>
   </COMPONENT>
@@ -711,10 +672,6 @@
     <ROW Registry="_" Root="0" Key="symphony" Value="URL:symphony" Component_="_"/>
     <ROW Registry="__1" Root="0" Key="symphony\shell\open\command" Value="&quot;[APPDIR]Symphony.exe&quot; &quot;%1&quot;" Component_="__1"/>
   </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="Symphony" Directory_="DesktopFolder" Name="SYMPHO~1|Symphony Shortcut" Component_="Symphony.exe" Target="[#Symphony.exe]" Description="Shortcut to Symphony Application" Hotkey="0" Icon_="icon.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
-    <ROW Shortcut="Symphony2" Directory_="Symphony_Dir" Name="Symphony" Component_="Symphony.exe" Target="[#Symphony.exe]" Description="Symphony shortcut" Hotkey="0" Icon_="icon.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
-  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiTextStyleComponent">
     <ROW TextStyle="DlgFontBold8_DlgFontBold8" FaceName="Tahoma" Size="8" Color="0" StyleBits="1"/>
   </COMPONENT>
@@ -724,25 +681,5 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
-  </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.TxtUpdateComponent">
-    <ROW Name="BringToFront" TxtUpdateSet="Symphony.config" FindPattern="&quot;bringToFront&quot;\s*:\s*false," ReplacePattern="&quot;bringToFront&quot; : [BRING_TO_FRONT]," Options="19" Order="4" FileEncoding="-1"/>
-    <ROW Name="LaunchOnStartup" TxtUpdateSet="Symphony.config" FindPattern="&quot;launchOnStartup&quot;\s*:\s*true," ReplacePattern="&quot;launchOnStartup&quot; : [AUTO_START]," Options="19" Order="3" FileEncoding="-1"/>
-    <ROW Name="MidiSysex" TxtUpdateSet="Symphony.config" FindPattern="&quot;midiSysex&quot;\s*:\s*true," ReplacePattern="&quot;midiSysex&quot; : [MIDI_SYSEX]," Options="19" Order="8" FileEncoding="-1"/>
-    <ROW Name="OpenExternal" TxtUpdateSet="Symphony.config" FindPattern="&quot;openExternal&quot;\s*:\s*true" ReplacePattern="&quot;openExternal&quot; : [OPEN_EXTERNAL]" Options="19" Order="11" FileEncoding="-1"/>
-    <ROW Name="Url" TxtUpdateSet="Symphony.config" FindPattern="&quot;url&quot;\s*:\s*&quot;.*&quot;" ReplacePattern="&quot;url&quot;: &quot;[POD_URL]&quot;" Options="19" Order="0" FileEncoding="-1"/>
-    <ROW Name="Notifications" TxtUpdateSet="Symphony.config" FindPattern="&quot;notifications&quot;\s*:\s*true," ReplacePattern="&quot;notifications&quot; : [NOTIFICATIONS]," Options="19" Order="7" FileEncoding="-1"/>
-    <ROW Name="MinimizeOnClose" TxtUpdateSet="Symphony.config" FindPattern="&quot;minimizeOnClose&quot;\s*:\s*true," ReplacePattern="&quot;minimizeOnClose&quot; : [MINIMIZE_ON_CLOSE]," Options="19" Order="1" FileEncoding="-1"/>
-    <ROW Name="PointerLock" TxtUpdateSet="Symphony.config" FindPattern="&quot;pointerLock&quot;\s*:\s*true," ReplacePattern="&quot;pointerLock&quot; : [POINTER_LOCK]," Options="19" Order="9" FileEncoding="-1"/>
-    <ROW Name="AlwaysOnTop" TxtUpdateSet="Symphony.config" FindPattern="&quot;alwaysOnTop&quot;\s*:\s*false" ReplacePattern="&quot;alwaysOnTop&quot; : [ALWAYS_ON_TOP]" Options="19" Order="2" FileEncoding="-1"/>
-    <ROW Name="Media" TxtUpdateSet="Symphony.config" FindPattern="&quot;media&quot;\s*:\s*true," ReplacePattern="&quot;media&quot; : [MEDIA]," Options="19" Order="5" FileEncoding="-1"/>
-    <ROW Name="Location" TxtUpdateSet="Symphony.config" FindPattern="&quot;geolocation&quot;\s*:\s*true," ReplacePattern="&quot;geolocation&quot; : [LOCATION]," Options="275" Order="6" FileEncoding="-1"/>
-    <ROW Name="FullScreen" TxtUpdateSet="Symphony.config" FindPattern="&quot;fullscreen&quot;\s*:\s*true," ReplacePattern="&quot;fullscreen&quot; : [FULL_SCREEN]," Options="19" Order="10" FileEncoding="-1"/>
-    <ROW Name="CustomTitleBar" TxtUpdateSet="Symphony.config" FindPattern="&quot;isCustomTitleBar&quot;\s*:\s*true," ReplacePattern="&quot;isCustomTitleBar&quot; : [CUSTOM_TITLE_BAR]," Options="19" Order="12" FileEncoding="-1"/>
-    <ROW Name="DevTools" TxtUpdateSet="Symphony.config" FindPattern="&quot;devToolsEnabled&quot;\s*:\s*true," ReplacePattern="&quot;devToolsEnabled&quot; : [DEV_TOOLS_ENABLED]," Options="19" Order="13" FileEncoding="-1"/>
-    <ROW Name="AutoLaunchPath" TxtUpdateSet="Symphony.config" FindPattern="&quot;autoLaunchPath&quot;\s*:\s*&quot;&quot;" ReplacePattern="&quot;autoLaunchPath&quot; : &quot;[AUTO_LAUNCH_PATH]&quot;" Options="19" Order="14" FileEncoding="-1"/>
-  </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.TxtUpdateSetComponent">
-    <ROW Key="Symphony.config" Component="am.pak" FileName="Symphony.config" Directory="config_Dir" Options="17"/>
   </COMPONENT>
 </DOCUMENT>
