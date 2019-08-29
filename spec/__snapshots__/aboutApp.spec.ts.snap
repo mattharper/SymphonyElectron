@@ -12,7 +12,7 @@ exports[`about app should render correctly 1`] = `
   <span
     className="AboutApp-name"
   >
-    Symphony
+    Mana
   </span>
   <span
     className="AboutApp-versionText"
@@ -22,7 +22,7 @@ exports[`about app should render correctly 1`] = `
   <span
     className="AboutApp-copyrightText"
   >
-    Copyright © 2019 Symphony
+    Copyright © 2019 Mana
   </span>
 </div>
 `;

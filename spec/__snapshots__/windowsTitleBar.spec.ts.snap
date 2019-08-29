@@ -84,7 +84,7 @@ exports[`windows title bar should render correctly 1`] = `
     <p
       id="title-bar-title"
     >
-      Symphony
+      Mana
     </p>
   </div>
   <div

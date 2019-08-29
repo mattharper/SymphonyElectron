@@ -21,14 +21,26 @@
 							<key>CHILDREN</key>
 							<array>
 								<dict>
+									<key>BUNDLE_CAN_DOWNGRADE</key>
+									<false/>
+									<key>BUNDLE_POSTINSTALL_PATH</key>
+									<dict>
+										<key>PATH_TYPE</key>
+										<integer>0</integer>
+									</dict>
+									<key>BUNDLE_PREINSTALL_PATH</key>
+									<dict>
+										<key>PATH_TYPE</key>
+										<integer>0</integer>
+									</dict>
 									<key>CHILDREN</key>
 									<array/>
 									<key>GID</key>
 									<integer>80</integer>
 									<key>PATH</key>
-									<string>../../dist/mac/Symphony.app</string>
+									<string>/Users/vishwas/Projects/symphony/SymphonyElectron/dist/mac/Mana.app</string>
 									<key>PATH_TYPE</key>
-									<integer>3</integer>
+									<integer>0</integer>
 									<key>PERMISSIONS</key>
 									<integer>493</integer>
 									<key>TYPE</key>
@@ -436,6 +448,8 @@
 				</dict>
 				<key>PAYLOAD_TYPE</key>
 				<integer>0</integer>
+				<key>PRESERVE_EXTENDED_ATTRIBUTES</key>
+				<false/>
 				<key>SHOW_INVISIBLE</key>
 				<false/>
 				<key>SPLIT_FORKS</key>
@@ -473,11 +487,11 @@
 				<key>FOLLOW_SYMBOLIC_LINKS</key>
 				<false/>
 				<key>IDENTIFIER</key>
-				<string>com.symphony.symphony-desktop</string>
+				<string>com.symphony.mana-desktop</string>
 				<key>LOCATION</key>
 				<integer>0</integer>
 				<key>NAME</key>
-				<string>Symphony</string>
+				<string>Mana</string>
 				<key>OVERWRITE_PERMISSIONS</key>
 				<false/>
 				<key>PAYLOAD_SIZE</key>
@@ -522,6 +536,45 @@
 			<dict>
 				<key>ALIGNMENT</key>
 				<integer>4</integer>
+				<key>APPAREANCES</key>
+				<dict>
+					<key>DARK_AQUA</key>
+					<dict>
+						<key>ALIGNMENT</key>
+						<integer>4</integer>
+						<key>BACKGROUND_PATH</key>
+						<dict>
+							<key>PATH</key>
+							<string>background.png</string>
+							<key>PATH_TYPE</key>
+							<integer>3</integer>
+						</dict>
+						<key>CUSTOM</key>
+						<true/>
+						<key>LAYOUT_DIRECTION</key>
+						<integer>0</integer>
+						<key>SCALING</key>
+						<integer>1</integer>
+					</dict>
+					<key>LIGHT_AQUA</key>
+					<dict>
+						<key>ALIGNMENT</key>
+						<integer>4</integer>
+						<key>BACKGROUND_PATH</key>
+						<dict>
+							<key>PATH</key>
+							<string>background.png</string>
+							<key>PATH_TYPE</key>
+							<integer>3</integer>
+						</dict>
+						<key>CUSTOM</key>
+						<true/>
+						<key>LAYOUT_DIRECTION</key>
+						<integer>0</integer>
+						<key>SCALING</key>
+						<integer>1</integer>
+					</dict>
+				</dict>
 				<key>BACKGROUND_PATH</key>
 				<dict>
 					<key>PATH</key>
@@ -531,8 +584,12 @@
 				</dict>
 				<key>CUSTOM</key>
 				<true/>
+				<key>LAYOUT_DIRECTION</key>
+				<integer>0</integer>
 				<key>SCALING</key>
 				<integer>1</integer>
+				<key>SHARED_SETTINGS_FOR_ALL_APPAREANCES</key>
+				<true/>
 			</dict>
 			<key>INSTALLATION TYPE</key>
 			<dict>
@@ -1007,7 +1064,7 @@
 				</dict>
 			</array>
 			<key>NAME</key>
-			<string>Symphony</string>
+			<string>Mana</string>
 			<key>PAYLOAD_ONLY</key>
 			<false/>
 			<key>TREAT_MISSING_PRESENTATION_DOCUMENTS_AS_WARNING</key>

@@ -27,7 +27,7 @@ export default class WindowsTitleBar extends React.Component<{}, IState> {
         super(props);
         this.window = remote.getCurrentWindow();
         this.state = {
-            title: document.title || 'Symphony',
+            title: document.title || 'Mana',
             isFullScreen: this.window.isFullScreen(),
             isMaximized: this.window.isMaximized(),
             titleBarHeight: '32px',

@@ -17,7 +17,7 @@ export default class AboutApp extends React.Component<{}, IState> {
     constructor(props) {
         super(props);
         this.state = {
-            appName: 'Symphony',
+            appName: 'Mana',
             buildNumber: '',
             clientVersion: '0',
             versionLocalised: 'Version',

@@ -1,5 +1,5 @@
-productName: "Symphony"
-appId: "com.symphony.electron-desktop"
+productName: "Mana"
+appId: "com.symphony.mana-desktop"
 
 # Package electron code into a asar archive. Set to false to debug issues.
 asar: true
