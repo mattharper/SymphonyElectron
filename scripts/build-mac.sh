@@ -66,10 +66,3 @@ npm run unpacked-mac
 # Create .pkg installer
 echo "Creating .pkg"
 /usr/local/bin/packagesbuild -v installer/mac/symphony-mac-packager.pkgproj
-PACKAGE=installer/mac/build/Symphony.pkg
-
-if [ ! -e ${PACKAGE} ]; then
-  echo "BUILD PACKAGE FAILED: package not created: ${PACKAGE}"
-  exit 1
-fi
-echo "Package created: ${PACKAGE}"
