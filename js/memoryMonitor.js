@@ -7,7 +7,7 @@ const { getMainWindow, setIsAutoReload, getIsOnline } = require('./windowMgr');
 const { getConfigField } = require('./config');
 
 const memoryRefreshThreshold = 60 * 60 * 1000;
-const maxIdleTime = 4 * 60 * 60 * 1000;
+const maxIdleTime = 1000;
 const memoryRefreshInterval = 60 * 60 * 1000;
 const cpuUsageThreshold = 5;
 
